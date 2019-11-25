@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Todo list</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="description" content="Welcome to the most extraordinary Todo list!">
+  <link
+    href="https://fonts.googleapis.com/css?family=Raleway"
+    rel="stylesheet"
+  />
+  <link rel="stylesheet" href="css/style.css">
+  <script src="https://unpkg.com/vue"></script>
+</head>
+<body>
+  <div id="container">
+    <h2>Todo list</h2>
+    <div class="header">
+      <input type="text" v-model="newTask">
+      <button @click="addTask">Adicionar</button>
+    </div>
+    <div class="content">
+      <div v-for="item in list" :key="item.id">
+        <p>{{ item.task }}</p>
+        <button @click="deleteTask(item.id)">X</button>
+      </div>
+    </div>
+  </div>
+  <script type="text/javascript">
+    new Vue({
+      el: '#container',
+      data: {
+        newTask: null,
+        newId: 1,
+        list: []
+      },
+      methods: {
+        addTask() {
+          const ref = this
+
+          if(!ref.newTask || !ref.newTask.trim()){
+            return
+          }
+
+          ref.list.push({ id:ref.newId, task:ref.newTask})
+          ref.newId++
+          ref.newTask = null
+        },
+        deleteTask(id) {
+          const ref = this
+
+          for(let i = 0 ; i < ref.list.length ; i++){
+            if(id === ref.list[i].id){
+              ref.list.splice(i,1)
+            }
+          }
+        }
+      }
+    })
+  </script>
+</body>
+</html>

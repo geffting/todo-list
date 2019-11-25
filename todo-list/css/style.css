@@ -1,0 +1,136 @@
+* {
+  box-sizing: border-box;
+  padding: 10px;
+  margin: 10px;
+}
+
+body {
+  margin: 0px;
+  padding: 0px;
+  background-color: #344a72;
+  font-family: Raleway, sans-serif;
+}
+
+#container {
+  margin: auto;
+  max-width: 700px;
+  padding: 10px;
+  background-color: white;
+  border-radius: 5px;
+}
+
+#container h2 {
+  text-align: center;
+}
+
+#container div {
+  text-align: center;
+}
+
+#container .header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+#container .header input {
+  outline-color: #49c1a2;
+  font-size: 14px;
+  width: 65%;
+  margin: 10px 0px;
+  border-radius: 5px;
+  border: 1px solid #cccccc;
+}
+
+#container .header button {
+  background-color: #49c1a2;
+  cursor: pointer;
+  border-radius: 5px;
+  width: 30%;
+  margin: 10px 0px;
+  color: white;
+  font-size: 14px;
+  outline: none;
+}
+
+#container .header button:hover {
+  background-color: #37a08e;
+}
+
+#container .content div {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin: 5px 0px;
+  padding: 0px;
+  border: 1px solid #cccccc;
+  border-radius: 5px;
+}
+
+#container .content div:first-child {
+  margin: 0px 0px 5px 0px;
+}
+
+#container .content div:last-child {
+  margin: 5px 0px 0px 0px;
+}
+
+#container .content p {
+  display: inline;
+  width: 80%;
+  word-break: break-word;
+}
+
+#container .content button {
+  width: 16%;
+  height: 39px;
+  background-color: #C60021;
+  color: white;
+  outline: none;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+#container .content button:hover {
+  background-color: #910019;
+}
+
+@media (max-width: 415px) {
+
+  #container .header {
+    display: block;
+  }
+
+  #container .header input {
+    width: 100%;
+    margin: 5px 0px;
+  }
+
+  #container .header button {
+    display: block;
+    width: 100%;
+    margin: 5px 0px;
+  }
+
+  #container .content button {
+    width: 25%;
+  }
+
+  #container .header button:hover {
+    background-color: #49c1a2;
+  }
+
+  #container .content button:hover {
+    background-color: #C60021;
+  }
+
+  #container .header button:active {
+    background-color: #37a08e;
+  }
+  
+  #container .content button:active {
+    background-color: #910019;
+  }
+
+}
